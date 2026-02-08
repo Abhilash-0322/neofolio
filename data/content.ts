@@ -1,6 +1,6 @@
 export const profile = {
   name: "Abhilash Maurya",
-  role: "AI, Full-Stack & Multi-Chain Systems Engineer",
+  role: "AI Agents & Full-Stack Developer",
   location: "Delhi, India",
   email: "abhilash.m.git@gmail.com",
   github: "https://github.com/Abhilash-0322",
@@ -11,33 +11,43 @@ export const profile = {
 export const storySections = [
   {
     id: "genesis",
-    eyebrow: "Genesis",
-    title: "Built In Parallel Timelines",
-    body: "From shipping full-stack systems to stress-testing AI behavior, the work pattern is consistent: design fast, execute under pressure, and ship artifacts that hold up in real usage."
+    chapter: "I",
+    eyebrow: "The Genesis",
+    title: "Where Parallel Timelines Converge",
+    body: "Every system starts with a single spark. Mine ignited across multiple dimensions simultaneously \u2014 full-stack architectures, artificial intelligence, and the decentralized frontier. Not as separate journeys, but as parallel threads of the same story, each informing and strengthening the others. The result: an engineering practice that doesn\u2019t fit neatly into one box, because the most interesting problems never do.",
+    quote: "\u201cThe most interesting engineers are the ones who refuse to be confined to a single timeline.\u201d"
   },
   {
     id: "systems",
-    eyebrow: "Systems & Scale",
-    title: "Backend-First Thinking",
-    body: "Production APIs, auth boundaries, cloud delivery, media pipelines, real-time channels, and dashboard controls are treated as one architecture, not disconnected features."
+    chapter: "II",
+    eyebrow: "The Architect\u2019s Forge",
+    title: "Building Foundations That Hold Universes",
+    body: "Production APIs aren\u2019t just endpoints \u2014 they\u2019re the nervous system of digital worlds. Auth boundaries stand as sentinels. Real-time channels carry the pulse of live interaction. Media pipelines transform raw data into rich experiences. Cloud infrastructure bends to serve the architecture, not the other way around. When the foundation is right, everything built on top becomes inevitable.",
+    quote: "\u201cClean architecture isn\u2019t about perfection. It\u2019s about making complexity feel simple.\u201d"
   },
   {
     id: "intelligence",
-    eyebrow: "Intelligence Layer",
-    title: "Applied AI Beyond Demos",
-    body: "Recent work emphasizes agents, reasoning loops, sentiment classification, and safety workflows where model outputs are operationalized through measurable pipelines."
+    chapter: "III",
+    eyebrow: "The Intelligence Nexus",
+    title: "Teaching Machines to Think With Purpose",
+    body: "AI isn\u2019t magic \u2014 it\u2019s engineering with different constraints and extraordinary possibilities. Agents that reason through multi-step problems. Sentiment models that understand the nuance human communication carries. Safety workflows that protect users when it matters most. RAG pipelines that retrieve with surgical precision. Every model deployed is a promise: that intelligence will serve a real purpose, not just a demo slide.",
+    quote: "\u201cThe gap between a demo and a deployed system is where real engineering lives.\u201d"
   },
   {
     id: "web3",
-    eyebrow: "Web3 & Security",
-    title: "Cross-Chain Risk Intelligence",
-    body: "Contract analysis across Solidity, Rust, and Move, plus compliance scoring and real-time alerting, reflects a security mindset that can move between ecosystems."
+    chapter: "IV",
+    eyebrow: "The Decentralized Frontier",
+    title: "Navigating the Cross-Chain Multiverse",
+    body: "Smart contracts written across Solidity, Rust, and Move \u2014 each chain a different universe with its own physics. Risk analysis engines that scan for vulnerabilities before they become exploits. Compliance scoring that bridges regulatory worlds. The decentralized frontier demands a security-first mindset and the rare ability to think across blockchain ecosystems simultaneously.",
+    quote: "\u201cIn Web3, security isn\u2019t a feature \u2014 it\u2019s the foundation upon which trust is built.\u201d"
   },
   {
     id: "velocity",
-    eyebrow: "Speed & Execution",
-    title: "High Throughput Delivery",
-    body: "Hackathon performance, fast prototype cycles, and solo execution under constraints point to reliable velocity without losing architectural quality."
+    chapter: "V",
+    eyebrow: "The Velocity Protocol",
+    title: "When Speed Becomes a Superpower",
+    body: "Hackathon victories aren\u2019t about shortcuts \u2014 they\u2019re about pattern recognition, architectural instinct honed over countless builds, and the ability to ship production-quality code at prototype speed. Solo execution under extreme constraints. Rapid iteration cycles that refuse to sacrifice structural integrity. Speed, not as a compromise, but as an amplifier of quality.",
+    quote: "\u201cVelocity without quality is just noise. Velocity with quality changes everything.\u201d"
   }
 ] as const;
 

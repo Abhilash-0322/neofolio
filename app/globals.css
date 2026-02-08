@@ -165,3 +165,44 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* ══ Narrative Storytelling Elements ══ */
+
+.chapter-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(111, 255, 94, 0.3);
+  background: rgba(111, 255, 94, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.08em;
+}
+
+.narrative-quote {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(166, 122, 255, 0.4);
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.narrative-quote::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--violet);
+  box-shadow: 0 0 12px rgba(166, 122, 255, 0.5);
+}

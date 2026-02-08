@@ -14,6 +14,7 @@ export function NarrativeEffects() {
     }
 
     const sections = gsap.utils.toArray<HTMLElement>("[data-story-section]");
+    const parallaxEls = gsap.utils.toArray<HTMLElement>("[data-parallax]");
 
     const ctx = gsap.context(() => {
       sections.forEach((section) => {
@@ -30,6 +31,23 @@ export function NarrativeEffects() {
               start: "top 82%",
               once: true
             }
+          }
+        );
+      });
+
+      parallaxEls.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 20 },
+          {
+            y: -20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.5,
+            },
           }
         );
       });
