@@ -64,18 +64,18 @@ export const projects = [
     href: "https://github.com/Abhilash-0322/dcXspotify",
     why: "Shows end-to-end product engineering across UX, backend reliability, and platform administration."
   },
-  {
-    name: "linkloom",
-    label: "Recent Social Infra",
-    period: "Updated Aug 2025",
-    impact:
-      "AI-augmented social platform with real-time chat and modern developer tooling, signaling strong product + systems integration.",
-    architecture:
-      "Next.js frontend with Express backend, MongoDB persistence, Stream-based messaging, media handling, and Clerk-powered identity.",
-    stack: ["Next.js", "Express", "MongoDB", "Stream Chat", "Tailwind", "TypeScript", "Clerk"],
-    href: "https://github.com/Abhilash-0322/linkloom",
-    why: "Demonstrates velocity in building socially interactive platforms with scalable communication primitives."
-  },
+  // {
+  //   name: "linkloom",
+  //   label: "Recent Social Infra",
+  //   period: "Updated Aug 2025",
+  //   impact:
+  //     "AI-augmented social platform with real-time chat and modern developer tooling, signaling strong product + systems integration.",
+  //   architecture:
+  //     "Next.js frontend with Express backend, MongoDB persistence, Stream-based messaging, media handling, and Clerk-powered identity.",
+  //   stack: ["Next.js", "Express", "MongoDB", "Stream Chat", "Tailwind", "TypeScript", "Clerk"],
+  //   href: "https://github.com/Abhilash-0322/linkloom",
+  //   why: "Demonstrates velocity in building socially interactive platforms with scalable communication primitives."
+  // },
   {
     name: "chainsentinel.ai",
     label: "Multi-Chain Security",
