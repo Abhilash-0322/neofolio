@@ -53,8 +53,34 @@ export const storySections = [
 
 export const projects = [
   {
+    name: "TalentInfra",
+    label: "ZYND AICKATHON 2026 · Bias-Aware Hiring Infra",
+    period: "February 2026",
+    impact:
+      "Six specialist AI agents working in concert to fix algorithmic bias in hiring: privacy guardian anonymizes profiles, bias detector scans job descriptions for linguistic and structural bias patterns, skill verifier validates evidence and assigns confidence scores, candidate matcher generates objective rankings, credential issuer mints W3C Verifiable Credentials with SHA-256 integrity proofs, and the orchestrator synthesizes the final ADVANCE / HOLD / REJECT decision — all streamed live to the frontend via WebSocket.",
+    architecture:
+      "Single-process Python monolith: FastAPI + WebSocket + Next.js 15 static export served by one uvicorn process. Each agent registers a DID on the Zynd Protocol registry at startup for authenticated inter-agent identity. PostgreSQL (Azure Flexible Server) in production, SQLite locally. Groq LLM (llama-3.3-70b-versatile + llama-3.1-8b-instant) for agent reasoning. CI/CD via GitHub Actions → Azure App Service.",
+    stack: ["Python", "FastAPI", "Next.js 15", "WebSocket", "PostgreSQL", "Groq", "W3C VCs", "Zynd Protocol", "Azure", "Docker"],
+    href: "https://github.com/Abhilash-0322/zynd-aickathon",
+    live: "https://zynd-hiring-app.azurewebsites.net",
+    why: "Complete end-to-end demonstration of multi-agent orchestration, verifiable credential issuance, privacy-preserving pipelines, real-time WebSocket transparency, and full Azure production deployment — solving a real problem in algorithmic hiring."
+  },
+  {
+    name: "SolSniff",
+    label: "Superteam Earn Bounty · Solana AI Agent",
+    period: "February 2026",
+    impact:
+      "Autonomous AI agent that monitors the Solana ecosystem across four data streams — on-chain metrics (Helius RPC, DeFiLlama TVL), GitHub developer activity (trending repos, commit velocity across Solana orgs), social signals (LunarCrush Galaxy Score, Reddit r/solana), and crypto news (CryptoPanic sentiment) — to detect emerging narratives before they become obvious and generate 12–35 concrete, grounded build ideas per analysis run.",
+    architecture:
+      "Next.js 14 App Router monolith for Vercel serverless deployment. Groq SDK (Llama 3.3 70B) powers two chained agents: Narrative Detector clusters cross-source signals (scored 0–100) into 4–7 ranked narratives with confidence scores and trend direction; Idea Generator produces 3–5 product ideas per narrative with problem, solution, audience, feasibility, and technical requirements. Neon PostgreSQL via Prisma v5 for persistence; in-memory cache for sub-second dashboard loads.",
+    stack: ["Next.js 14", "TypeScript", "Groq", "Llama 3.3 70B", "Prisma", "Neon PostgreSQL", "Vercel", "Helius RPC", "DeFiLlama", "LunarCrush"],
+    href: "https://github.com/Abhilash-0322/sol-sniff",
+    live: "https://solsniff-vercel-c9lcjcpqx-abhilash-maruyas-projects.vercel.app/",
+    why: "Showcases fully autonomous AI agent pipelines, multi-source data synthesis, structured LLM output with JSON mode, and production Vercel deployment — all applied to a real Superteam Earn bounty on the Solana ecosystem."
+  },
+  {
     name: "dcXspotify",
-    label: "Flagship Recent Build",
+    label: "Full-Stack Music Platform",
     period: "Active in 2025 · Updated Sep 2025",
     impact:
       "Full-stack music and chat system with admin control surfaces, strong auth boundaries, and real-time channels for production-style usage.",
@@ -62,20 +88,9 @@ export const projects = [
       "React + TypeScript client, Node/Express API layer, MongoDB persistence, Socket.io real-time transport, Clerk auth, Cloudinary media pipeline.",
     stack: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Socket.io", "Clerk", "Cloudinary"],
     href: "https://github.com/Abhilash-0322/dcXspotify",
+    live: "https://music-chat-3fcw.onrender.com/",
     why: "Shows end-to-end product engineering across UX, backend reliability, and platform administration."
   },
-  // {
-  //   name: "linkloom",
-  //   label: "Recent Social Infra",
-  //   period: "Updated Aug 2025",
-  //   impact:
-  //     "AI-augmented social platform with real-time chat and modern developer tooling, signaling strong product + systems integration.",
-  //   architecture:
-  //     "Next.js frontend with Express backend, MongoDB persistence, Stream-based messaging, media handling, and Clerk-powered identity.",
-  //   stack: ["Next.js", "Express", "MongoDB", "Stream Chat", "Tailwind", "TypeScript", "Clerk"],
-  //   href: "https://github.com/Abhilash-0322/linkloom",
-  //   why: "Demonstrates velocity in building socially interactive platforms with scalable communication primitives."
-  // },
   {
     name: "chainsentinel.ai",
     label: "Multi-Chain Security",
@@ -86,10 +101,11 @@ export const projects = [
       "FastAPI analysis engine, Next.js front-end, MongoDB data layer, WebSocket alerts, model-driven vulnerability classification.",
     stack: ["FastAPI", "Python", "Next.js", "MongoDB", "WebSockets", "Solidity", "Rust", "Move"],
     href: "https://github.com/Abhilash-0322/chainsentinel.ai",
+    live: "https://deploybackend-icvu.onrender.com/",
     why: "Validates security depth, cross-chain context switching, and practical AI in infra-critical workflows."
   },
   {
-    name: "HackHaven2.0 (Zen Heaven)",
+    name: "Zen-Heaen",
     label: "AI Safety + Recommendation",
     period: "Updated Jul 2025",
     impact:
@@ -98,14 +114,17 @@ export const projects = [
       "React/Tailwind interface, FastAPI services, LangChain-style agent orchestration, Twilio automation, MongoDB storage.",
     stack: ["React", "FastAPI", "MongoDB", "Twilio", "LangChain", "Tailwind"],
     href: "https://github.com/Abhilash-0322/HackHaven2.0",
+    live: "https://hack-haven2-0.vercel.app/",
     why: "Strong signal of practical AI integration under rapid-delivery constraints."
   }
 ] as const;
 
 export const achievements = [
+  "Winner — ZYND AICKATHON 2026: built TalentInfra, a 6-agent bias-aware hiring infrastructure with W3C Verifiable Credentials and DID-based agent identity, deployed live on Azure.",
   "Co-inventor of an IoT-AI telemedicine patent (India Patent No. 202511018153A, published April 2025).",
   "1st place in a solo AI agent hackathon track with 500+ participants.",
   "Top 10 finalist across multiple regional hackathons for pressure-tested prototypes.",
+  "Superteam Earn bounty submission: SolSniff — autonomous Solana narrative detection agent using Groq LLM across 4 live data sources, live on Vercel.",
   "Open source contributor through GSSOC and Hacktoberfest with merged pull requests and issue reviews.",
   "Active experimentation in autonomous agent security, smart-wallet AI workflows, and API-level monetization patterns."
 ] as const;

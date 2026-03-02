@@ -10,10 +10,11 @@ type ProjectCardProps = {
   architecture: string;
   stack: readonly string[];
   href: string;
+  live?: string | null;
   why: string;
 };
 
-export function ProjectCard({ name, label, period, impact, architecture, stack, href, why }: ProjectCardProps) {
+export function ProjectCard({ name, label, period, impact, architecture, stack, href, live, why }: ProjectCardProps) {
   return (
     <motion.article
       whileHover={{ y: -8, scale: 1.01 }}
@@ -43,15 +44,31 @@ export function ProjectCard({ name, label, period, impact, architecture, stack, 
 
       <p className="relative mt-5 border-l-2 border-violet/70 pl-3 text-sm text-slate-300">{why}</p>
 
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className="relative mt-6 inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-medium hover:border-green/80 hover:text-green"
-      >
-        Repository
-        <span aria-hidden>→</span>
-      </a>
+      <div className="relative mt-6 flex flex-wrap gap-3">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-medium hover:border-green/80 hover:text-green"
+        >
+          Repository
+          <span aria-hidden>→</span>
+        </a>
+        {live && (
+          <a
+            href={live}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/5 px-4 py-2 text-sm font-medium text-cyan hover:border-cyan/80 hover:bg-cyan/10"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
+            </span>
+            Live
+          </a>
+        )}
+      </div>
     </motion.article>
   );
 }
