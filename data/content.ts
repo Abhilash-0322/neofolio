@@ -8,6 +8,41 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/abhilash-maurya-b615b9277/"
 };
 
+export const codingProfiles = [
+  {
+    name: "LeetCode",
+    handle: "Abhilash_Maurya",
+    href: "https://leetcode.com/u/Abhilash_Maurya/",
+    color: "#f5a623",
+    accent: "#f5a623",
+    description: "Data structures, algorithms & contest problems"
+  },
+  {
+    name: "Codeforces",
+    handle: "mauryaabhi2003",
+    href: "https://codeforces.com/profile/mauryaabhi2003",
+    color: "#37e1ff",
+    accent: "#37e1ff",
+    description: "Competitive programming & rated rounds"
+  },
+  {
+    name: "GeeksForGeeks",
+    handle: "mauryaabqern",
+    href: "https://www.geeksforgeeks.org/profile/mauryaabqern?tab=activity",
+    color: "#6fff5e",
+    accent: "#6fff5e",
+    description: "CS fundamentals, interview prep & practice"
+  },
+  {
+    name: "HackerRank",
+    handle: "abhilash_0322",
+    href: "https://www.hackerrank.com/profile/abhilash_0322",
+    color: "#a67aff",
+    accent: "#a67aff",
+    description: "Skill certifications & domain challenges"
+  }
+] as const;
+
 export const storySections = [
   {
     id: "genesis",
@@ -120,11 +155,11 @@ export const projects = [
 ] as const;
 
 export const achievements = [
-  "Winner — ZYND AICKATHON 2026: built TalentInfra, a 6-agent bias-aware hiring infrastructure with W3C Verifiable Credentials and DID-based agent identity, deployed live on Azure.",
+  "MLH Solana Track Winning Team at Brainwave Hackathon organized by AIMS DTU",
   "Co-inventor of an IoT-AI telemedicine patent (India Patent No. 202511018153A, published April 2025).",
   "1st place in a solo AI agent hackathon track with 500+ participants.",
   "Top 10 finalist across multiple regional hackathons for pressure-tested prototypes.",
-  "Superteam Earn bounty submission: SolSniff — autonomous Solana narrative detection agent using Groq LLM across 4 live data sources, live on Vercel.",
+  // "Superteam Earn bounty submission: SolSniff — autonomous Solana narrative detection agent using Groq LLM across 4 live data sources, live on Vercel.",
   "Open source contributor through GSSOC and Hacktoberfest with merged pull requests and issue reviews.",
   "Active experimentation in autonomous agent security, smart-wallet AI workflows, and API-level monetization patterns."
 ] as const;

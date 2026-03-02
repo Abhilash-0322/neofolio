@@ -11,6 +11,7 @@ const items = [
   { href: "#velocity", label: "Velocity" },
   { href: "#projects", label: "Projects" },
   { href: "#achievements", label: "Signals" },
+  { href: "#coding-arena", label: "Arena" },
   { href: "#contact", label: "Contact" }
 ] as const;
 

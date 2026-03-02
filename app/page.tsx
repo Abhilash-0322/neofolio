@@ -6,6 +6,7 @@ import { StorySections } from "@/components/sections/StorySections";
 import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
+import { CodingProfiles } from "@/components/sections/CodingProfiles";
 import { Outro } from "@/components/sections/Outro";
 
 const AmbientScene = dynamic(
@@ -36,6 +37,7 @@ export default function Home() {
       <CapabilitiesSection />
       <ProjectsSection />
       <AchievementsSection />
+      <CodingProfiles />
       <Outro />
     </main>
   );
