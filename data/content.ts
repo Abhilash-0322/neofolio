@@ -75,7 +75,7 @@ export const projects = [
       "Next.js 14 App Router monolith for Vercel serverless deployment. Groq SDK (Llama 3.3 70B) powers two chained agents: Narrative Detector clusters cross-source signals (scored 0–100) into 4–7 ranked narratives with confidence scores and trend direction; Idea Generator produces 3–5 product ideas per narrative with problem, solution, audience, feasibility, and technical requirements. Neon PostgreSQL via Prisma v5 for persistence; in-memory cache for sub-second dashboard loads.",
     stack: ["Next.js 14", "TypeScript", "Groq", "Llama 3.3 70B", "Prisma", "Neon PostgreSQL", "Vercel", "Helius RPC", "DeFiLlama", "LunarCrush"],
     href: "https://github.com/Abhilash-0322/sol-sniff",
-    live: "https://solsniff-vercel-c9lcjcpqx-abhilash-maruyas-projects.vercel.app/",
+    live: "https://solsniffer.vercel.app/",
     why: "Showcases fully autonomous AI agent pipelines, multi-source data synthesis, structured LLM output with JSON mode, and production Vercel deployment — all applied to a real Superteam Earn bounty on the Solana ecosystem."
   },
   {
