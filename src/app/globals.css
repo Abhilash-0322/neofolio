@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-term-bg text-term-text font-mono antialiased;
+  }
+
+  ::selection {
+    @apply bg-term-cyan/30 text-term-green;
+  }
+}
+
+@layer components {
+  .term-window {
+    @apply border border-term-border bg-term-panel/80 backdrop-blur-sm rounded-md shadow-[0_0_40px_rgba(57,186,230,0.06)];
+  }
+
+  .term-prompt {
+    @apply text-term-green;
+  }
+
+  .term-path {
+    @apply text-term-cyan;
+  }
+
+  .term-dim {
+    @apply text-term-muted;
+  }
+
+  .term-link {
+    @apply text-term-cyan hover:text-term-green underline-offset-4 hover:underline transition-colors;
+  }
+
+  .scanlines {
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+  }
+}
