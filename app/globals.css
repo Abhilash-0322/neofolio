@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-readme-bg text-readme-text antialiased;
+  }
+
+  ::selection {
+    @apply bg-readme-accent/30 text-readme-heading;
+  }
+}
+
+@layer components {
+  .readme-link {
+    @apply text-readme-link underline-offset-2 hover:underline;
+  }
+
+  .readme-badge {
+    @apply inline-flex items-center rounded-md border border-readme-border bg-readme-badge px-2 py-0.5 font-mono text-[11px] text-readme-muted;
+  }
+}
