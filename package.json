@@ -1,17 +1,16 @@
 {
-  "name": "neofolio-5042",
+  "name": "neofolio-5053",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5042",
+    "dev": "next dev -p 5053",
     "build": "next build",
-    "start": "next start -p 5042",
+    "start": "next start -p 5053",
     "lint": "next lint"
   },
   "dependencies": {
-    "lucide-react": "^0.487.0",
     "next": "14.2.28",
-    "next-themes": "^0.4.6",
+    "next-themes": "^0.4.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
