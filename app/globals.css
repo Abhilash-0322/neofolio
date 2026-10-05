@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Midnight Emerald — light: mint/white; dark: deep green/black */
+:root {
+  --color-surface: #f6fffb;
+  --color-surface-elevated: #ffffff;
+  --color-border: #c8e6d9;
+  --color-ink: #0a1f17;
+  --color-ink-muted: #2d5a47;
+  --color-ink-faint: #5a8f78;
+  --color-emerald-glow: rgba(16, 185, 129, 0.35);
+  --color-emerald-muted: #10b981;
+  --color-accent: #059669;
+  --color-accent-soft: #d1fae5;
+  --color-grid: rgba(5, 150, 105, 0.08);
+  --color-shadow: rgba(5, 80, 60, 0.12);
+  --color-hero-gradient: radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      rgba(167, 243, 208, 0.9),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #f0fdf9 0%, #f6fffb 50%, #ecfdf5 100%);
+}
+
+.dark {
+  --color-surface: #050a08;
+  --color-surface-elevated: #0c1410;
+  --color-border: #1a3328;
+  --color-ink: #e8f5ef;
+  --color-ink-muted: #9ec4b0;
+  --color-ink-faint: #5d8a74;
+  --color-emerald-glow: rgba(52, 211, 153, 0.25);
+  --color-emerald-muted: #34d399;
+  --color-accent: #34d399;
+  --color-accent-soft: #064e3b;
+  --color-grid: rgba(52, 211, 153, 0.06);
+  --color-shadow: rgba(0, 0, 0, 0.45);
+  --color-hero-gradient: radial-gradient(
+      ellipse 70% 50% at 50% 0%,
+      rgba(6, 78, 59, 0.85),
+      transparent 65%
+    ),
+    linear-gradient(180deg, #030806 0%, #050a08 45%, #020504 100%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
