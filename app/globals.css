@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warm latte — light */
+:root {
+  --coffee-bg: #f3e8dc;
+  --coffee-surface: #fff9f2;
+  --coffee-text: #2a1810;
+  --coffee-muted: #6b5344;
+  --coffee-accent: #7a4f2e;
+  --coffee-caramel: #b07d4f;
+  --coffee-foam: #e8d4c0;
+  --coffee-roast: #4a3228;
+  --coffee-crema: #d4a574;
+  --coffee-gradient: linear-gradient(
+    125deg,
+    #7a4f2e 0%,
+    #b07d4f 45%,
+    #c9956c 100%
+  );
+  --coffee-steam: rgba(176, 125, 79, 0.22);
+  --coffee-glow: rgba(212, 165, 116, 0.35);
+}
+
+/* Espresso — dark */
+.dark {
+  --coffee-bg: #0f0a07;
+  --coffee-surface: #1a120d;
+  --coffee-text: #f5ebe0;
+  --coffee-muted: #a8907e;
+  --coffee-accent: #d4a574;
+  --coffee-caramel: #c9956c;
+  --coffee-foam: #2a1f18;
+  --coffee-roast: #0a0604;
+  --coffee-crema: #e8c9a0;
+  --coffee-gradient: linear-gradient(
+    125deg,
+    #d4a574 0%,
+    #c9956c 50%,
+    #a67c52 100%
+  );
+  --coffee-steam: rgba(212, 165, 116, 0.12);
+  --coffee-glow: rgba(201, 149, 108, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-coffee-bg text-coffee-ink antialiased;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--coffee-crema) 45%, transparent);
+  color: var(--coffee-text);
+}
+
+.glass-panel {
+  @apply backdrop-blur-md;
+  border: 1px solid color-mix(in srgb, var(--coffee-roast) 12%, transparent);
+  background: color-mix(in srgb, var(--coffee-surface) 72%, transparent);
+}
+
+.dark .glass-panel {
+  border-color: rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.04);
+}
+
+.text-gradient-coffee {
+  @apply bg-clip-text text-transparent;
+  background-image: var(--coffee-gradient);
+}
+
+.cafe-card {
+  @apply glass-panel rounded-2xl shadow-sm;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--coffee-roast) 8%, transparent);
+}
+
+.dark .cafe-card {
+  box-shadow: 0 4px 24px rgb(0 0 0 / 0.2);
+}
