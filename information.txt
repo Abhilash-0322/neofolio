@@ -1,0 +1,114 @@
+Abhilash Maurya — Profile & Portfolio Source Material
+======================================================
+
+Purpose
+-------
+Structured reference for building a professional portfolio. Pair with resume: abhilash_python.pdf
+
+Positioning (use any of these titles)
+-------------------------------------
+- Backend Developer
+- Python Developer
+- AI / AI Systems Developer
+
+Focus areas: cloud infrastructure, backend & APIs, systems engineering, AI agents & RAG.
+Career interests: cloud-related roles, AI systems roles, finance / fintech-oriented engineering roles.
+Also suitable for freelance clients needing APIs, deployments, or production AI features.
+
+Contact
+-------
+Name:     Abhilash Maurya
+Location: Delhi NCR, India (Ghaziabad)
+Email:    abhilash.m.git@gmail.com
+Phone:    +91 7880764235
+GitHub:   https://github.com/Abhilash-0322
+LinkedIn: https://www.linkedin.com/in/abhilash-maurya-b615b9277/
+X:        https://x.com/abhilash_glitch
+
+Short bio (suggested)
+---------------------
+Backend and AI systems developer with hands-on experience shipping FastAPI services, cloud deployments,
+multi-agent workflows, and RAG pipelines. B.Tech IT student at KIET; led campus AI MVPs and hackathon
+delivery. AWS Cloud Practitioner; comfortable on Azure and Docker-based CI/CD.
+
+Work experience
+---------------
+AI Engineer Intern — Spearmint Technologies (Part-time, Remote)
+Period: Aug 2026 (~1 month)
+Skills: Text-to-Speech, AI fine-tuning, web scraping, Hermes Agent, AI agents development, teamwork
+Summary: Voice and agent features—TTS pipelines, fine-tuning, data collection, Hermes-based agents.
+
+AI/ML Coordinator — Innogeeks Club, KIET
+Period: Nov 2023 – Present
+- Led 5+ AI and full-stack MVPs (architecture, backend, deployment)
+- Mentored 6+ developers (Python, FastAPI, ML, hackathon projects)
+- Coordinated agile teams of 3–6 for hackathon prototypes
+- API planning, database modeling, design reviews
+
+Education
+---------
+B.Tech Information Technology — KIET Group of Institutions (AKTU), Ghaziabad — Expected 2027
+Intermediate (CBSE) — Maharishi Vidya Mandir
+
+Certifications
+--------------
+- AWS Certified Cloud Practitioner
+- Google AI Essentials (Coursera)
+
+Technical skills (from resume)
+------------------------------
+Languages: Python, C++, JavaScript, SQL
+Backend:   FastAPI, Django, Express.js, LangChain
+Frontend:  React, Next.js
+Data:      PostgreSQL, MongoDB, MySQL, Redis, vector DBs, Firebase
+Platform:  Docker, Git, Linux, AWS, Azure, GitHub Actions, RAG, AI agents
+
+Selected projects (portfolio-worthy)
+------------------------------------
+TalentInfra (Zynd AICKATHON 2026) — Multi-agent bias-aware hiring; FastAPI, Next.js, PostgreSQL, Groq, Azure
+  GitHub: https://github.com/Abhilash-0322/zynd-aickathon
+  Live:   https://zynd-hiring-app.azurewebsites.net
+
+SolSniff — Solana narrative / idea agent; Next.js, Groq, Prisma, Vercel
+  GitHub: https://github.com/Abhilash-0322/sol-sniff
+  Live:   https://solsniffer.vercel.app/
+
+ChainSentinel AI — Multi-chain smart contract risk & compliance; FastAPI, Next.js, MongoDB
+  GitHub: https://github.com/Abhilash-0322/chainsentinel.ai
+
+Quadrant RAG — RAG over custom knowledge bases; FastAPI, LangChain, vector DBs, Docker
+  GitHub: https://github.com/Abhilash-0322/quadrant-rag
+
+Resume Analyzer — Free AI resume feedback tool
+  GitHub: https://github.com/Abhilash-0322/resume-analyzer
+  Live:   https://resume-analyzer-pulse.vercel.app
+
+Zen Heaven — Wellness AI, sentiment, Twilio safety flows; FastAPI, React, LangChain
+  GitHub: https://github.com/Abhilash-0322/HackHaven2.0
+  Live:   https://hack-haven2-0.vercel.app/
+
+dcXspotify — Full-stack music + chat; React, Node, MongoDB, Socket.io, Clerk
+  GitHub: https://github.com/Abhilash-0322/dcXspotify
+
+Other GitHub activity: open-source (OpenClaw, Gemini CLI), agent tooling, finance-tracker, Minecraft launcher (Tauri/Rust), etc.
+
+Achievements & recognition
+--------------------------
+- MLH Solana track winning team — Brainwave Hackathon (AIMS DTU)
+- 1st place — solo AI agent hackathon track (500+ participants)
+- Top 5 finalist — 5+ regional hackathons
+- Co-inventor — IoT-AI telemedicine patent (India 202511018153A, published Apr 2025)
+- Open source: GSSOC, Hacktoberfest, merged PRs and reviews
+
+Coding profiles
+---------------
+LeetCode:      https://leetcode.com/u/Abhilash_Maurya/
+Codeforces:    https://codeforces.com/profile/mauryaabhi2003
+GeeksForGeeks: https://www.geeksforgeeks.org/profile/mauryaabqern
+HackerRank:    https://www.hackerrank.com/profile/abhilash_0322
+
+Notes for portfolio tone
+----------------------
+- Professional, employer- and client-ready; avoid sci-fi / “multiverse” narrative framing
+- Emphasize shipped systems, cloud deployment, and AI that works beyond demos
+- Stack for new site: same as prior neofolio (Next.js 14, React, Tailwind, TypeScript) unless specified otherwise
