@@ -1,31 +1,21 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./data/**/*.{js,ts,jsx,tsx,mdx}"
-  ],
+  darkMode: "class",
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        bg: "var(--bg)",
-        surface: "var(--surface)",
-        panel: "var(--panel)",
-        green: "var(--green)",
-        violet: "var(--violet)",
-        cyan: "var(--cyan)",
-        text: "var(--text)",
-        muted: "var(--muted)"
+        ink: "#0c0d0f",
+        copper: "#c87941",
+        "copper-light": "#e0a06c",
+        parchment: "#f2ede5",
+        graphite: "#17191d"
       },
       fontFamily: {
-        display: ["var(--font-display)"],
-        mono: ["var(--font-mono)"]
-      },
-      boxShadow: {
-        glowGreen: "0 0 24px rgba(111, 255, 94, 0.28)",
-        glowViolet: "0 0 24px rgba(166, 122, 255, 0.25)",
-        glass: "0 10px 50px rgba(0, 0, 0, 0.35)"
+        sans: ["var(--font-manrope)", "sans-serif"],
+        display: ["var(--font-syne)", "sans-serif"],
+        mono: ["var(--font-ibm-plex-mono)", "monospace"]
       }
     }
   },
