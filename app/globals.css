@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --aurora-night: #050810;
+  --aurora-teal: #2dd4bf;
+  --aurora-cyan: #22d3ee;
+  --aurora-violet: #a78bfa;
+  --aurora-magenta: #e879f9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-aurora-night text-slate-100 antialiased;
+  background-color: var(--aurora-night);
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.35);
+  color: #f8fafc;
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/[0.04] backdrop-blur-md;
+}
+
+.text-gradient-aurora {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    120deg,
+    #2dd4bf 0%,
+    #22d3ee 35%,
+    #a78bfa 65%,
+    #e879f9 100%
+  );
+}
+
+.section-fade {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
