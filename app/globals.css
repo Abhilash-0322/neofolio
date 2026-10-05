@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lux-ink: #1a1416;
+  --lux-muted: #5c4f52;
+  --lux-subtle: #8a7a7e;
+  --lux-surface: rgba(255, 248, 245, 0.85);
+  --lux-border: rgba(183, 110, 121, 0.22);
+  --lux-bg: #fdf8f6;
+  --lux-bg-accent: #f5ebe6;
+}
+
+.dark {
+  --lux-ink: #f8f4f2;
+  --lux-muted: #c4b5b0;
+  --lux-subtle: #9a8f8c;
+  --lux-surface: rgba(26, 20, 22, 0.72);
+  --lux-border: rgba(201, 168, 124, 0.18);
+  --lux-bg: #0c0a0b;
+  --lux-bg-accent: #161214;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body antialiased;
+  color: var(--lux-ink);
+  background-color: var(--lux-bg);
+}
+
+::selection {
+  background: rgba(201, 168, 124, 0.35);
+  color: var(--lux-ink);
+}
+
+.glass-luxury {
+  @apply border backdrop-blur-md;
+  border-color: var(--lux-border);
+  background: var(--lux-surface);
+}
+
+.text-gradient-rose-gold {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    115deg,
+    #b76e79 0%,
+    #d4af37 38%,
+    #e8b4b8 62%,
+    #c9a87c 100%
+  );
+}
+
+.btn-rose-gold {
+  background: linear-gradient(135deg, #b76e79 0%, #c9a87c 50%, #d4af37 100%);
+  @apply text-[#0c0a0b] shadow-lg transition hover:brightness-110;
+  box-shadow: 0 12px 40px -12px rgba(183, 110, 121, 0.45);
+}
+
+.dark .btn-rose-gold {
+  @apply text-[#0c0a0b];
+}
+
+.accent-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 168, 124, 0.55),
+    rgba(183, 110, 121, 0.45),
+    transparent
+  );
+}
