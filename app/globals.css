@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-memphis-cream text-memphis-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-memphis-yellow text-memphis-ink;
+  }
+}
+
+@layer components {
+  .memphis-card {
+    @apply rounded-none border-[3px] border-memphis-ink bg-white shadow-memphis;
+  }
+
+  .memphis-card-accent {
+    @apply memphis-card;
+  }
+
+  .section-eyebrow {
+    @apply font-display text-xs font-bold uppercase tracking-[0.25em] text-memphis-orange;
+  }
+
+  .memphis-tag {
+    @apply inline-block border-2 border-memphis-ink bg-memphis-lime px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .memphis-btn {
+    @apply inline-flex items-center justify-center border-[3px] border-memphis-ink bg-memphis-yellow px-5 py-2.5 text-sm font-bold shadow-memphis transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none;
+  }
+
+  .memphis-btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-[3px] border-memphis-ink bg-white px-5 py-2.5 text-sm font-bold shadow-memphis-pink transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(#0d0d0d 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+  }
+}
