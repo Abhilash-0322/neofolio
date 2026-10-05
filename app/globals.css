@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-studio-bg text-studio-text antialiased;
+  }
+
+  ::selection {
+    @apply bg-studio-accent/30 text-white;
+  }
+}
+
+@layer utilities {
+  .spectrum-gradient {
+    background: linear-gradient(
+      90deg,
+      #6ee7d6 0%,
+      #a78bfa 35%,
+      #fb7185 65%,
+      #fbbf24 100%
+    );
+  }
+
+  .text-spectrum {
+    background: linear-gradient(
+      90deg,
+      #6ee7d6,
+      #a78bfa 50%,
+      #fbbf24
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
