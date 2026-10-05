@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nordic fjord mist — light */
+    --color-bg: #e8f0f4;
+    --color-surface: #f4f8fb;
+    --color-fg: #1a3344;
+    --color-muted: #5a7285;
+    --color-border: #b8cdd9;
+    --color-accent: #2d6a8a;
+    --color-accent-soft: #9ec4dc;
+    --color-glow: rgba(45, 106, 138, 0.15);
+    --color-shadow: rgba(26, 51, 68, 0.12);
+    --mist-top: rgba(255, 255, 255, 0.85);
+    --mist-bottom: rgba(158, 196, 220, 0.35);
+  }
+
+  .dark {
+    /* Polar night — dark */
+    --color-bg: #070d18;
+    --color-surface: #0f1828;
+    --color-fg: #e4edf5;
+    --color-muted: #8aa3bc;
+    --color-border: #243a55;
+    --color-accent: #7ec8f0;
+    --color-accent-soft: #3d5f82;
+    --color-glow: rgba(126, 200, 240, 0.2);
+    --color-shadow: rgba(0, 0, 0, 0.45);
+    --mist-top: rgba(30, 55, 90, 0.5);
+    --mist-bottom: rgba(7, 13, 24, 0.95);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-page text-primary antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-page;
+  }
+}
+
+@layer components {
+  .fjord-backdrop {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% -20%, var(--mist-top), transparent 55%),
+      radial-gradient(ellipse 90% 60% at 100% 50%, var(--color-glow), transparent 50%),
+      linear-gradient(180deg, var(--color-bg) 0%, var(--mist-bottom) 100%);
+  }
+}
