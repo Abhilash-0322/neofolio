@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-newsprint text-ink antialiased;
+    background-image: radial-gradient(
+      ellipse at 20% 0%,
+      rgba(0, 0, 0, 0.03) 0%,
+      transparent 50%
+    );
+  }
+}
+
+@layer components {
+  .rule-double {
+    border-top: 3px double theme("colors.rule");
+    border-bottom: 1px solid theme("colors.rule");
+  }
+
+  .rule-single {
+    @apply border-t border-rule;
+  }
+
+  .column-divider {
+    @apply border-r border-rule/40 last:border-r-0;
+  }
+
+  .drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-playfair), Georgia, serif;
+    font-size: 3.5rem;
+    line-height: 0.85;
+    padding-right: 0.35rem;
+    padding-top: 0.1rem;
+    font-weight: 700;
+  }
+
+  .small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+  }
+}
