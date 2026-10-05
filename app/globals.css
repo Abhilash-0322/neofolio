@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial light — charcoal on cream */
+    --color-paper: #f4efe4;
+    --color-ink: #1a1917;
+    --color-ink-muted: #4a453c;
+    --color-ink-faint: #7a7368;
+    --color-rule: #cfc4b2;
+    --color-surface: #ebe4d6;
+    --color-surface-elevated: #faf7f0;
+    --color-accent: #8b3a2a;
+    --color-shadow: rgba(26, 25, 23, 0.08);
+  }
+
+  .dark {
+    /* Inverted magazine — cream on charcoal */
+    --color-paper: #121110;
+    --color-ink: #f2ebe0;
+    --color-ink-muted: #c4b9a8;
+    --color-ink-faint: #8f8679;
+    --color-rule: #2e2a26;
+    --color-surface: #1a1816;
+    --color-surface-elevated: #22201d;
+    --color-accent: #d4a574;
+    --color-shadow: rgba(0, 0, 0, 0.45);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+
+  .dark ::selection {
+    @apply bg-accent text-paper;
+  }
+}
+
+@layer utilities {
+  .editorial-dropcap::first-letter {
+    @apply float-left mr-2 mt-1 font-display text-5xl font-medium leading-none text-accent;
+  }
+
+  .magazine-rule {
+    @apply border-t border-rule;
+    background-image: linear-gradient(
+      to right,
+      var(--color-rule) 0%,
+      transparent 100%
+    );
+  }
+}
