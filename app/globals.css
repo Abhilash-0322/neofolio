@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Workshop light — brushed copper on concrete */
+:root {
+  --forge-bg: #e6e0d6;
+  --forge-surface: #f2ede6;
+  --forge-text: #1c1510;
+  --forge-muted: #5a5248;
+  --forge-accent: #a85f2b;
+  --forge-copper: #c47a3d;
+  --forge-steel: #6b7280;
+  --forge-concrete: #d4cdc3;
+  --forge-iron: #2f2a26;
+  --forge-ember: #d97706;
+  --forge-gradient: linear-gradient(
+    125deg,
+    #8b5a2b 0%,
+    #c47a3d 42%,
+    #e8b88a 100%
+  );
+  --forge-glow: rgba(196, 122, 61, 0.28);
+  --forge-spark: rgba(217, 119, 6, 0.18);
+  --forge-grid: rgba(47, 42, 38, 0.07);
+}
+
+/* Forge dark — coal, ember, molten copper */
+.dark {
+  --forge-bg: #080605;
+  --forge-surface: #12100c;
+  --forge-text: #f3e8dc;
+  --forge-muted: #a89484;
+  --forge-accent: #e8956a;
+  --forge-copper: #d4a574;
+  --forge-steel: #4b5563;
+  --forge-concrete: #1a1612;
+  --forge-iron: #030201;
+  --forge-ember: #ff6b35;
+  --forge-gradient: linear-gradient(
+    125deg,
+    #ff6b35 0%,
+    #e8956a 45%,
+    #c47a3d 100%
+  );
+  --forge-glow: rgba(255, 107, 53, 0.22);
+  --forge-spark: rgba(255, 107, 53, 0.14);
+  --forge-grid: rgba(232, 149, 106, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-forge-bg text-forge-ink antialiased;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--forge-copper) 45%, transparent);
+  color: var(--forge-text);
+}
+
+.glass-panel {
+  border: 1px solid color-mix(in srgb, var(--forge-iron) 12%, transparent);
+  background: color-mix(in srgb, var(--forge-surface) 78%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.dark .glass-panel {
+  border-color: rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.04);
+}
+
+.text-gradient-copper {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: var(--forge-gradient);
+}
+
+.forge-card {
+  @apply glass-panel rounded-2xl shadow-sm;
+  box-shadow:
+    0 1px 2px color-mix(in srgb, var(--forge-iron) 10%, transparent),
+    0 4px 24px -4px color-mix(in srgb, var(--forge-iron) 6%, transparent);
+}
+
+.dark .forge-card {
+  box-shadow: 0 8px 32px -8px rgb(0 0 0 / 0.35);
+}
+
+.workshop-grid {
+  background-image:
+    linear-gradient(var(--forge-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--forge-grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
