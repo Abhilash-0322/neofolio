@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  html.light {
+    --sol-base03: #002b36;
+    --sol-base02: #073642;
+    --sol-base01: #586e75;
+    --sol-base00: #657b83;
+    --sol-base0: #839496;
+    --sol-base1: #93a2a1;
+    --sol-base2: #eee8d5;
+    --sol-base3: #fdf6e3;
+    --sol-blue: #268bd2;
+    --sol-cyan: #2aa198;
+    --sol-green: #859900;
+    --sol-yellow: #b58900;
+    --sol-orange: #cb4b16;
+    --sol-red: #dc322f;
+    --sol-violet: #6c71c4;
+
+    --sol-bg: var(--sol-base3);
+    --sol-bg-alt: var(--sol-base2);
+    --sol-fg: var(--sol-base00);
+    --sol-muted: var(--sol-base1);
+    --sol-emphasis: var(--sol-base01);
+    --sol-border: color-mix(in srgb, var(--sol-base1) 55%, var(--sol-base2));
+  }
+
+  html.dark {
+    --sol-bg: var(--sol-base03);
+    --sol-bg-alt: var(--sol-base02);
+    --sol-fg: var(--sol-base0);
+    --sol-muted: var(--sol-base00);
+    --sol-emphasis: var(--sol-base1);
+    --sol-border: color-mix(in srgb, var(--sol-base01) 40%, var(--sol-base02));
+  }
+
+  html {
+    @apply h-full scroll-smooth bg-sol-bg text-sol-fg;
+  }
+
+  body {
+    @apply min-h-full antialiased transition-colors duration-300;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--sol-blue) 35%, transparent);
+    color: var(--sol-emphasis);
+  }
+}
+
+@layer utilities {
+  .sol-link {
+    @apply text-sol-blue underline-offset-4 transition-colors hover:text-sol-cyan hover:underline;
+  }
+}
