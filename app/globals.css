@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-paper text-ink font-serif text-[1.05rem] leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-ink;
+  }
+}
+
+@layer components {
+  .editorial-rule {
+    @apply border-t border-rule;
+  }
+
+  .drop-cap::first-letter {
+    @apply float-left font-display text-[4.25rem] leading-[0.85] pr-3 pt-1 text-accent;
+  }
+
+  .columns-body {
+    column-gap: 2.5rem;
+  }
+
+  @screen md {
+    .columns-body {
+      columns: 2;
+    }
+  }
+
+  @screen lg {
+    .columns-body {
+      columns: 3;
+    }
+  }
+}
