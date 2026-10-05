@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --chart-1: #3b82f6;
+  --chart-2: #8b5cf6;
+  --chart-3: #06b6d4;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+}
+
+body {
+  @apply bg-panel text-slate-100 antialiased;
+}
+
+@layer utilities {
+  .chart-bar {
+    @apply rounded-t-sm bg-gradient-to-t from-accent-muted to-accent-glow transition-all duration-500;
+  }
+}
