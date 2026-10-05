@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-washi text-sumi antialiased;
+  }
+
+  ::selection {
+    @apply bg-moss/20 text-sumi;
+  }
+}
+
+@layer utilities {
+  .ink-stroke {
+    stroke: currentColor;
+    stroke-width: 1.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.35;
+  }
+}
