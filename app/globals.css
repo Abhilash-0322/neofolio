@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Architect studio — daylight */
+    --arch-deep-rgb: 235 230 220;
+    --arch-paper-rgb: 247 244 238;
+    --arch-chalk-rgb: 26 24 20;
+    --arch-ink-rgb: 74 68 60;
+    --arch-line-rgb: 139 115 85;
+    --arch-accent-rgb: 180 83 9;
+    --arch-grid: rgba(139, 115, 85, 0.14);
+    --arch-grid-line: rgba(139, 115, 85, 0.16);
+    --arch-grid-major-line: rgba(139, 115, 85, 0.24);
+    --arch-surface-glow: rgba(255, 248, 235, 0.65);
+    --arch-sheet-inset: inset 0 0 0 1px rgba(139, 115, 85, 0.35),
+      inset 0 0 0 4px rgba(247, 244, 238, 0.85);
+    --arch-selection-bg: #8b7355;
+    --arch-selection-fg: #f7f4ee;
+  }
+
+  .dark {
+    /* Blueprint — night */
+    --arch-deep-rgb: 7 26 46;
+    --arch-paper-rgb: 12 35 64;
+    --arch-chalk-rgb: 232 244 252;
+    --arch-ink-rgb: 184 212 240;
+    --arch-line-rgb: 91 163 232;
+    --arch-accent-rgb: 240 198 116;
+    --arch-grid: rgba(91, 163, 232, 0.22);
+    --arch-grid-line: rgba(91, 163, 232, 0.18);
+    --arch-grid-major-line: rgba(91, 163, 232, 0.28);
+    --arch-surface-glow: rgba(91, 163, 232, 0.12);
+    --arch-sheet-inset: inset 0 0 0 1px rgba(91, 163, 232, 0.35),
+      inset 0 0 0 4px rgba(7, 26, 46, 0.5);
+    --arch-selection-bg: #5ba3e8;
+    --arch-selection-fg: #071a2e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-arch-deep text-arch-ink antialiased;
+  }
+
+  ::selection {
+    background: var(--arch-selection-bg);
+    color: var(--arch-selection-fg);
+  }
+}
+
+@layer components {
+  .arch-surface {
+    @apply relative bg-arch-paper/80 backdrop-blur-[2px];
+  }
+
+  .arch-surface::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 bg-arch-grid bg-arch opacity-60;
+  }
+
+  .draw-corners {
+    @apply relative;
+  }
+
+  .draw-corners::before,
+  .draw-corners::after {
+    content: "";
+    @apply pointer-events-none absolute h-3 w-3 border-arch-line;
+  }
+
+  .draw-corners::before {
+    @apply left-0 top-0 border-l border-t;
+  }
+
+  .draw-corners::after {
+    @apply bottom-0 right-0 border-b border-r;
+  }
+
+  .dim-line {
+    @apply font-mono text-[10px] uppercase tracking-[0.25em] text-arch-line/80;
+  }
+
+  .sheet-border {
+    box-shadow: var(--arch-sheet-inset);
+  }
+}
