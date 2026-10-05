@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-stage-black text-neutral-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-stage-gold text-stage-black;
+  }
+}
+
+@layer utilities {
+  .spotlight-gradient {
+    background: radial-gradient(
+      ellipse 80% 55% at 50% 0%,
+      rgba(255, 248, 231, 0.14) 0%,
+      rgba(245, 158, 11, 0.06) 35%,
+      transparent 70%
+    );
+  }
+
+  .curtain-edge {
+    background: linear-gradient(
+      90deg,
+      rgba(28, 10, 18, 0.9) 0%,
+      transparent 12%,
+      transparent 88%,
+      rgba(28, 10, 18, 0.9) 100%
+    );
+  }
+}
