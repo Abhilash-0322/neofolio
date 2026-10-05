@@ -1,0 +1,21 @@
+{
+  "name": "abhilash-watercolor-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p ${PORT:-5089}",
+    "build": "next build",
+    "start": "next start -p ${PORT:-5089}"
+  },
+  "dependencies": {
+    "next": "14.2.28",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.1",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "typescript": "5.7.3"
+  }
+}
