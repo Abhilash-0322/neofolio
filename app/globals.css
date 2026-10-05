@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        rgba(224, 122, 95, 0.06) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(107, 154, 196, 0.08) 0%,
+        transparent 45%
+      );
+  }
+
+  ::selection {
+    @apply bg-sketch-coral/30 text-ink;
+  }
+}
+
+@layer components {
+  /* Irregular hand-drawn rectangle via border-radius morphing */
+  .sketch-border {
+    @apply border-2 border-ink bg-paper shadow-sketch-sm;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+
+  .sketch-border-lg {
+    @apply border-2 border-ink bg-paper shadow-sketch;
+    border-radius: 2% 98% 1% 99% / 99% 2% 98% 1%;
+  }
+
+  .sketch-border-alt {
+    @apply border-2 border-ink bg-paper shadow-sketch-sm;
+    border-radius: 98% 2% 97% 3% / 4% 96% 4% 96%;
+  }
+
+  .sketch-pill {
+    @apply inline-block border-2 border-ink bg-paper px-3 py-0.5;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+
+  .sketch-link {
+    @apply font-sketch text-lg text-ink underline decoration-sketch-coral decoration-wavy decoration-2 underline-offset-4 transition-colors hover:text-sketch-coral;
+  }
+
+  .sketch-divider {
+    @apply h-0 w-full border-0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q25 1 50 4 T100 4 T150 5 T200 3 T250 5 T300 4 T350 6 T400 4' fill='none' stroke='%233D3B39' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 400px 8px;
+    height: 8px;
+  }
+
+  .sketch-section-rule {
+    @apply relative py-16 md:py-24;
+  }
+
+  .sketch-section-rule::before {
+    content: "";
+    @apply absolute left-6 right-6 top-0 md:left-10 md:right-10;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q30 7 60 4 T120 4 T180 6 T240 3 T300 5 T360 4 T400 4' fill='none' stroke='%233D3B39' stroke-width='1.5' stroke-linecap='round' opacity='0.35'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 400px 8px;
+  }
+
+  .sketch-nav-link {
+    @apply font-sketch text-base text-ink-muted transition-colors hover:text-sketch-coral;
+  }
+
+  .sketch-title {
+    @apply font-sketch text-ink;
+  }
+
+  .sketch-label {
+    @apply font-sketch text-xl text-sketch-coral md:text-2xl;
+  }
+
+  .sketch-card {
+    @apply sketch-border p-6 transition-transform hover:-rotate-[0.35deg] md:p-8;
+  }
+
+  .sketch-card-alt {
+    @apply sketch-border-alt p-6 transition-transform hover:rotate-[0.25deg] md:p-8;
+  }
+}
