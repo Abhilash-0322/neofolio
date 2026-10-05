@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --chart-grid: rgba(34, 211, 238, 0.08);
+}
+
+body {
+  @apply bg-canvas text-slate-200 antialiased;
+  background-image:
+    linear-gradient(var(--chart-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--chart-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-lg border border-grid bg-panel/90 backdrop-blur-sm;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between border-b border-grid px-4 py-2 font-mono text-xs uppercase tracking-wider text-slate-500;
+  }
+
+  .skill-track {
+    @apply relative h-2 overflow-hidden rounded-sm bg-slate-800;
+  }
+
+  .skill-fill {
+    @apply absolute inset-y-0 left-0 rounded-sm bg-gradient-to-r from-accent/80 to-accent transition-all duration-700;
+  }
+
+  .mini-bar {
+    @apply rounded-t-sm bg-accent/60 transition-all hover:bg-accent;
+  }
+
+  .metric-value {
+    @apply font-mono text-3xl font-semibold tabular-nums text-accent;
+  }
+
+  .donut-segment {
+    transform-origin: center;
+  }
+}
