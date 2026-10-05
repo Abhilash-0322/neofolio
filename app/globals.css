@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 26 25 23;
+  --paper: 225 224 220;
+  --concrete: 195 194 188;
+  --signal: 221 255 74;
+}
+
+.dark {
+  --ink: 228 227 222;
+  --paper: 27 27 25;
+  --concrete: 62 62 58;
+  --signal: 221 255 74;
+}
+
+@layer base {
+  * {
+    @apply border-ink/20;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: rgb(var(--paper));
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgb(var(--signal));
+    color: rgb(var(--ink));
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1440px] px-5 md:px-10 xl:px-14;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[10px] uppercase tracking-[0.16em] text-ink/60;
+  }
+
+  .icon-button {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/25 transition-colors duration-200 hover:bg-ink hover:text-paper;
+  }
+
+  .line-link {
+    @apply relative inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-opacity hover:opacity-60;
+  }
+
+  .line-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-200;
+  }
+
+  .line-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .concrete-panel {
+    background-color: rgb(var(--concrete) / 0.45);
+    background-image: linear-gradient(
+      125deg,
+      rgb(255 255 255 / 0.14) 0%,
+      transparent 35%,
+      rgb(0 0 0 / 0.06) 100%
+    );
+  }
+}
+
+.grid-paper {
+  background-image: linear-gradient(rgb(var(--ink) / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+.dark .grain::after {
+  mix-blend-mode: screen;
+  opacity: 0.045;
+}
+
+.project-number {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(5rem, 13vw, 11rem);
+  font-stretch: condensed;
+  line-height: 0.74;
+  letter-spacing: -0.1em;
+}
+
+.display-title {
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-stretch: condensed;
+  letter-spacing: -0.08em;
+  line-height: 0.84;
+}
+
+.reveal-line {
+  animation: reveal-line 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes reveal-line {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-line {
+    animation: none;
+  }
+}
