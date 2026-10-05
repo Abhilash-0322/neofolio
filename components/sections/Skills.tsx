@@ -12,13 +12,13 @@ const groups: { key: keyof typeof skills; label: string }[] = [
 export function Skills() {
   return (
     <Section id="skills" label="Skills">
-      <div className="grid grid-cols-1 gap-px border border-neutral-200 bg-neutral-200 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
         {groups.map(({ key, label }) => (
-          <div key={key} className="bg-white p-6 md:p-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-500">
+          <div key={key} className="bg-surface p-6 md:p-8">
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-faint">
               {label}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-800">
+            <p className="mt-4 text-sm leading-relaxed text-ink">
               {skills[key].join(", ")}
             </p>
           </div>
