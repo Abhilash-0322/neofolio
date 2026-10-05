@@ -10,6 +10,7 @@ Positioning (use any of these titles)
 - Backend Developer
 - Python Developer
 - AI / AI Systems Developer
+- DevOps Engineer
 
 Focus areas: cloud infrastructure, backend & APIs, systems engineering, AI agents & RAG.
 Career interests: cloud-related roles, AI systems roles, finance / fintech-oriented engineering roles.
@@ -109,6 +110,6 @@ HackerRank:    https://www.hackerrank.com/profile/abhilash_0322
 
 Notes for portfolio tone
 ----------------------
-- Professional, employer- and client-ready; avoid sci-fi / “multiverse” narrative framing
+- Professional, employer- and client-ready;
 - Emphasize shipped systems, cloud deployment, and AI that works beyond demos
 - Stack for new site: same as prior neofolio (Next.js 14, React, Tailwind, TypeScript) unless specified otherwise

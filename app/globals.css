@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f7f2e8;
+  --ink: #1e2433;
+  --muted: #5c5a52;
+  --accent: #8b3a3a;
+  --margin: #d4a5a5;
+  --rule: rgba(30, 36, 51, 0.12);
+  --card: rgba(255, 252, 245, 0.72);
+  --border: rgba(30, 36, 51, 0.14);
+  --shadow-journal: 4px 6px 24px rgba(30, 36, 51, 0.08);
+  --line-height: 2rem;
+}
+
+.dark {
+  --paper: #0a0c12;
+  --ink: #e6e2d8;
+  --muted: #9a958a;
+  --accent: #c9a86c;
+  --margin: #4a3f5c;
+  --rule: rgba(201, 168, 108, 0.1);
+  --card: rgba(14, 17, 26, 0.85);
+  --border: rgba(201, 168, 108, 0.18);
+  --shadow-journal: 4px 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-journal antialiased;
+    font-size: 1.0625rem;
+    line-height: var(--line-height);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+
+.journal-page {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, var(--margin) 1px, transparent 1px),
+    repeating-linear-gradient(
+      transparent,
+      transparent calc(var(--line-height) - 1px),
+      var(--rule) calc(var(--line-height) - 1px),
+      var(--rule) var(--line-height)
+    );
+  background-size:
+    100% 100%,
+    100% var(--line-height);
+  background-position:
+    3.25rem 0,
+    0 0;
+  background-attachment: local;
+}
+
+.journal-content {
+  padding-left: 4.5rem;
+  padding-right: 1.5rem;
+}
+
+@layer components {
+  .section-label {
+    @apply font-hand text-2xl text-accent tracking-wide;
+  }
+
+  .ink-link {
+    @apply text-ink underline underline-offset-4 transition-colors;
+    text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+
+  .ink-link:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  .journal-card {
+    @apply rounded-sm border border-border bg-card shadow-journal backdrop-blur-sm;
+  }
+}
