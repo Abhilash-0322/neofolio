@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #2dd4bf;
+  --magenta: #e879f9;
+  --void: #05080f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-void text-slate-200 antialiased;
+  background-image: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(45, 212, 191, 0.08),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 50%,
+      rgba(232, 121, 249, 0.06),
+      transparent
+    );
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-glow via-slate-100 to-magenta-glow;
+  }
+
+  .border-glow {
+    @apply border border-line transition-shadow duration-300;
+  }
+
+  .border-glow:hover {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.2),
+      0 0 40px rgba(232, 121, 249, 0.08);
+    border-color: rgba(45, 212, 191, 0.35);
+  }
+
+  .link-glow {
+    @apply transition-all duration-300;
+  }
+
+  .link-glow:hover {
+    color: var(--teal);
+    text-shadow: 0 0 12px rgba(45, 212, 191, 0.5);
+  }
+}
+
+/* Cinematic hero vignette */
+.hero-vignette {
+  mask-image: radial-gradient(
+    ellipse 70% 80% at 50% 40%,
+    black 20%,
+    transparent 100%
+  );
+}
+
+.grid-floor {
+  background-size: 48px 48px;
+  background-image: linear-gradient(
+      to right,
+      rgba(45, 212, 191, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(45, 212, 191, 0.06) 1px,
+      transparent 1px
+    );
+  transform: perspective(600px) rotateX(60deg);
+  transform-origin: center top;
+}
+
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    var(--teal),
+    rgba(232, 121, 249, 0.6),
+    transparent
+  );
+}
