@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sandy shore — warm light */
+    --background: #f4ebe0;
+    --foreground: #1c3d42;
+    --muted: #e8d9c8;
+    --muted-foreground: #4a6b6f;
+    --border: #d4b896;
+    --divider: #c9a87a;
+    --accent: #0d7a72;
+    --accent-foreground: #f4ebe0;
+    --surface: #faf6f0;
+  }
+
+  .dark {
+    /* Abyss — deep teal dark */
+    --background: #031a1f;
+    --foreground: #c8ebe8;
+    --muted: #0a2a32;
+    --muted-foreground: #7eb8b3;
+    --border: #134e4a;
+    --divider: #0f3d3a;
+    --accent: #2dd4bf;
+    --accent-foreground: #031a1f;
+    --surface: #062228;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+}
