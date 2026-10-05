@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Forest moss — light */
+:root {
+  --forest-canvas: #edf3e6;
+  --forest-surface: #f7faf3;
+  --forest-ink: #1c2e1f;
+  --forest-muted: #4a5f4e;
+  --forest-moss: #4d7a52;
+  --forest-fern: #6b9b5e;
+  --forest-bark: #6b5344;
+  --forest-mist: rgba(77, 122, 82, 0.14);
+}
+
+/* Deep woods — dark */
+.dark {
+  --forest-canvas: #0a110d;
+  --forest-surface: #121c16;
+  --forest-ink: #e2ede0;
+  --forest-muted: #9bb39a;
+  --forest-moss: #7cb87a;
+  --forest-fern: #5a9a68;
+  --forest-bark: #a68b72;
+  --forest-mist: rgba(124, 184, 122, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-forest-canvas font-body text-forest-ink antialiased;
+}
+
+::selection {
+  background: var(--forest-mist);
+  color: var(--forest-ink);
+}
+
+.glass-panel {
+  border: 1px solid color-mix(in srgb, var(--forest-moss) 22%, transparent);
+  background: color-mix(in srgb, var(--forest-surface) 72%, transparent);
+  @apply backdrop-blur-md;
+}
+
+.dark .glass-panel {
+  border-color: color-mix(in srgb, var(--forest-moss) 16%, transparent);
+  background: color-mix(in srgb, var(--forest-surface) 52%, transparent);
+}
+
+.text-gradient-moss {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    125deg,
+    var(--forest-moss) 0%,
+    var(--forest-fern) 45%,
+    var(--forest-bark) 100%
+  );
+}
