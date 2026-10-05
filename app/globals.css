@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #f4ede5;
+  --muted: #aa9e92;
+  --surface: #161311;
+  --surface-raised: #1e1a17;
+  --line: rgba(226, 133, 72, 0.2);
+  --copper: #e28548;
+  --copper-bright: #ffae6d;
+}
+
+.light {
+  --ink: #2a1a12;
+  --muted: #705f53;
+  --surface: #fffaf5;
+  --surface-raised: #fff4e9;
+  --line: rgba(152, 76, 27, 0.22);
+  --copper: #a94f1a;
+  --copper-bright: #853b12;
+}
+
+.light body {
+  background: #fffaf5;
+  color: var(--ink);
+}
+
+.light .circuit-grid {
+  background-image:
+    linear-gradient(rgba(152, 76, 27, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(152, 76, 27, 0.08) 1px, transparent 1px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #100e0d;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background: #e28548;
+  color: #100e0d;
+}
+
+.mono {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.circuit-grid {
+  background-image:
+    linear-gradient(rgba(226, 133, 72, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 133, 72, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.5) 65%, transparent 100%);
+}
+
+.circuit-line {
+  background: linear-gradient(90deg, transparent, rgba(226, 133, 72, 0.4), transparent);
+}
+
+.glow {
+  box-shadow: 0 0 80px rgba(190, 82, 25, 0.1);
+}
+
+.glass {
+  background: rgba(30, 26, 23, 0.72);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.project-card {
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.project-card:hover {
+  background: rgba(43, 32, 25, 0.9);
+  border-color: rgba(226, 133, 72, 0.52);
+  transform: translateY(-4px);
+}
+
+.link-underline {
+  background-image: linear-gradient(var(--copper-bright), var(--copper-bright));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 180ms ease;
+}
+
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
