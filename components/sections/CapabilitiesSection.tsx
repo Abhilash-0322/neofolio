@@ -30,7 +30,7 @@ export function CapabilitiesSection() {
         <Reveal>
           <p className="story-kicker">The Arsenal</p>
           <h2 data-parallax className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">Systems, Intelligence, Infrastructure</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
             Four pillars of engineering mastery, each one a universe unto itself &mdash; yet all converging toward the same mission: building things that work, at scale, under pressure.
           </p>
         </Reveal>
@@ -38,12 +38,12 @@ export function CapabilitiesSection() {
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {pillars.map((pillar, idx) => (
             <Reveal key={pillar.name} delay={0.06 * idx}>
-              <article className="glass group rounded-2xl p-6 transition-all duration-300 hover:border-white/30">
+              <article className="glass group rounded-2xl p-6 transition-all duration-300 hover:border-glass">
                 <h3 className="font-mono text-sm text-green">{pillar.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{pillar.detail}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.detail}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {pillar.skills.map((skill) => (
-                    <span key={skill} className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[0.65rem] text-slate-400">
+                    <span key={skill} className="rounded-full border border-glass bg-chip px-2 py-0.5 font-mono text-[0.65rem] text-muted/80">
                       {skill}
                     </span>
                   ))}

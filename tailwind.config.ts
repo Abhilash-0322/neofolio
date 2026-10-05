@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,16 +17,18 @@ const config: Config = {
         violet: "var(--violet)",
         cyan: "var(--cyan)",
         text: "var(--text)",
-        muted: "var(--muted)"
+        muted: "var(--muted)",
+        glass: "var(--glass-border)",
+        chip: "var(--chip-bg)"
       },
       fontFamily: {
         display: ["var(--font-display)"],
         mono: ["var(--font-mono)"]
       },
       boxShadow: {
-        glowGreen: "0 0 24px rgba(111, 255, 94, 0.28)",
-        glowViolet: "0 0 24px rgba(166, 122, 255, 0.25)",
-        glass: "0 10px 50px rgba(0, 0, 0, 0.35)"
+        glowFrost: "0 0 24px color-mix(in srgb, var(--cyan) 32%, transparent)",
+        glowGlacier: "0 0 24px color-mix(in srgb, var(--violet) 28%, transparent)",
+        glass: "0 10px 50px rgba(14, 90, 138, 0.15)"
       }
     }
   },

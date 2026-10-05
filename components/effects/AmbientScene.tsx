@@ -2,6 +2,7 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars, Text, Billboard } from "@react-three/drei";
+import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import type { Group, Mesh } from "three";
@@ -17,8 +18,8 @@ const ORBITS = [
     radius: 1.9,
     speed: 0.14,
     tilt: [0.4, 0, 0.15] as [number, number, number],
-    color: "#6fff5e",
-    emissive: "#1f9f44",
+    color: "#38bdf8",
+    emissive: "#0c5f94",
   },
   {
     id: "backend",
@@ -26,8 +27,8 @@ const ORBITS = [
     radius: 2.7,
     speed: -0.10,
     tilt: [-0.5, 0.3, 0] as [number, number, number],
-    color: "#a67aff",
-    emissive: "#5522be",
+    color: "#6ec8ff",
+    emissive: "#2a7ab8",
   },
   {
     id: "infra",
@@ -35,8 +36,8 @@ const ORBITS = [
     radius: 3.5,
     speed: 0.07,
     tilt: [0.2, -0.4, 0.2] as [number, number, number],
-    color: "#37e1ff",
-    emissive: "#1a7a8f",
+    color: "#a8d4f5",
+    emissive: "#3d6d94",
   },
   {
     id: "frontier",
@@ -44,8 +45,8 @@ const ORBITS = [
     radius: 4.3,
     speed: -0.055,
     tilt: [-0.3, 0.2, -0.25] as [number, number, number],
-    color: "#ff7eb3",
-    emissive: "#8f1a45",
+    color: "#7dd3fc",
+    emissive: "#1d4ed8",
   },
 ];
 
@@ -74,7 +75,7 @@ function CoreNexus() {
         <icosahedronGeometry args={[0.28, 1]} />
         <meshStandardMaterial
           color="#ffffff"
-          emissive="#6fff5e"
+          emissive="#38bdf8"
           emissiveIntensity={0.9}
           wireframe
           transparent
@@ -84,15 +85,15 @@ function CoreNexus() {
       <mesh ref={outer}>
         <icosahedronGeometry args={[0.42, 1]} />
         <meshStandardMaterial
-          color="#a67aff"
-          emissive="#5522be"
+          color="#6ec8ff"
+          emissive="#2a7ab8"
           emissiveIntensity={0.5}
           wireframe
           transparent
           opacity={0.3}
         />
       </mesh>
-      <pointLight intensity={1.5} color="#6fff5e" distance={3} />
+      <pointLight intensity={1.5} color="#38bdf8" distance={3} />
     </group>
   );
 }
@@ -203,7 +204,9 @@ function CameraDrift() {
 }
 
 export function AmbientScene() {
+  const { resolvedTheme } = useTheme();
   const [isEnabled, setIsEnabled] = useState(false);
+  const fogColor = resolvedTheme === "dark" ? "#050b12" : "#eef6fc";
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -227,12 +230,12 @@ export function AmbientScene() {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         dpr={[1, 1.5]}
       >
-        <fog attach="fog" args={["#040507", 5, 14]} />
+        <fog attach="fog" args={[fogColor, 5, 14]} />
         <ambientLight intensity={0.45} />
-        <pointLight position={[-4, 3, 5]} intensity={1.6} color="#6fff5e" />
-        <pointLight position={[4, -2, 5]} intensity={1.6} color="#a67aff" />
-        <pointLight position={[0, 4, -3]} intensity={1.0} color="#37e1ff" />
-        <pointLight position={[2, -3, -4]} intensity={0.8} color="#ff7eb3" />
+        <pointLight position={[-4, 3, 5]} intensity={1.6} color="#38bdf8" />
+        <pointLight position={[4, -2, 5]} intensity={1.6} color="#6ec8ff" />
+        <pointLight position={[0, 4, -3]} intensity={1.0} color="#a8d4f5" />
+        <pointLight position={[2, -3, -4]} intensity={0.8} color="#7dd3fc" />
 
         <CoreNexus />
         {ORBITS.map((orbit) => (

@@ -11,7 +11,7 @@ export function ProjectsSection() {
           <h2 data-parallax className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">
             Each Project, a Universe of Its Own
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
             These aren&apos;t just repositories &mdash; they&apos;re living systems, each one a convergence of architecture, intelligence, and craft. Selected for recency, depth, and the story they tell about what&apos;s possible when engineering meets ambition.
           </p>
         </Reveal>

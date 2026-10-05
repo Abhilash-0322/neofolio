@@ -28,28 +28,28 @@ export function ProjectCard({ name, label, period, impact, architecture, stack, 
           <p className="story-kicker text-green">{label}</p>
           <h3 className="mt-1 text-2xl font-semibold tracking-tight">{name}</h3>
         </div>
-        <p className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs text-slate-300">{period}</p>
+        <p className="rounded-full border border-glass bg-chip px-3 py-1 font-mono text-xs text-muted">{period}</p>
       </div>
 
-      <p className="relative mt-5 text-sm leading-relaxed text-slate-200">{impact}</p>
-      <p className="relative mt-3 text-sm leading-relaxed text-slate-300">{architecture}</p>
+      <p className="relative mt-5 text-sm leading-relaxed text-text/90">{impact}</p>
+      <p className="relative mt-3 text-sm leading-relaxed text-muted">{architecture}</p>
 
       <div className="relative mt-5 flex flex-wrap gap-2">
         {stack.map((item) => (
-          <span key={item} className="rounded-full border border-white/15 bg-black/30 px-2.5 py-1 font-mono text-xs text-slate-200">
+          <span key={item} className="rounded-full border border-glass bg-monitor px-2.5 py-1 font-mono text-xs text-text/90">
             {item}
           </span>
         ))}
       </div>
 
-      <p className="relative mt-5 border-l-2 border-violet/70 pl-3 text-sm text-slate-300">{why}</p>
+      <p className="relative mt-5 border-l-2 border-violet/70 pl-3 text-sm text-muted">{why}</p>
 
       <div className="relative mt-6 flex flex-wrap gap-3">
         <a
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-medium hover:border-green/80 hover:text-green"
+          className="inline-flex items-center gap-2 rounded-full border border-glass px-4 py-2 text-sm font-medium hover:border-green/80 hover:text-green"
         >
           Repository
           <span aria-hidden>→</span>

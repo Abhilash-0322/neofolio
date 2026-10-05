@@ -9,7 +9,7 @@ export function StorySections() {
           <div key={section.id} className="relative">
             {/* Visual connector between chapters */}
             {idx > 0 && (
-              <div className="mx-auto h-16 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent sm:h-20" />
+              <div className="mx-auto h-16 w-px bg-gradient-to-b from-transparent via-cyan/25 to-transparent sm:h-20" />
             )}
 
             <article
@@ -30,7 +30,7 @@ export function StorySections() {
                 <h2 data-parallax className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   {section.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
                   {section.body}
                 </p>
                 <blockquote className="narrative-quote mt-4">

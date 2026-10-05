@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { profile } from "@/data/content";
 
 const bootLines = [
-  "multiverse.init :: scanning parallel timelines...",
-  "core.nexus :: skill orbits synchronized",
+  "glacier.init :: arctic frost palette loaded",
+  "frost.nexus :: ice-blue skill orbits synced",
   "neural.bridge :: intelligence layer active",
   "chain.sentinel :: cross-chain monitors online",
   "velocity.protocol :: deployment state \u2192 live",
@@ -18,7 +18,7 @@ export function Hero() {
         <div className="glass rounded-[2rem] p-6 sm:p-10">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="story-kicker">Chapter Zero · System Initialization</p>
-            <p className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs text-slate-300">
+            <p className="rounded-full border border-glass bg-chip px-3 py-1 font-mono text-xs text-muted">
               {profile.location}
             </p>
           </div>
@@ -38,7 +38,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.08 }}
-            className="mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-5 max-w-3xl text-base leading-relaxed text-muted sm:text-lg"
           >
             In a multiverse of technologies, one engineer navigates every dimension — building full-stack platforms, intelligence layers, and multi-chain security systems where clean architecture, relentless velocity, and real-world impact converge.
           </motion.p>
@@ -52,7 +52,7 @@ export function Hero() {
             &ldquo;The best engineers don&apos;t specialize in one universe &mdash; they learn to move between all of them.&rdquo;
           </motion.p>
 
-          <div className="monitor-line mt-7 grid gap-2 rounded-2xl border border-white/15 bg-black/35 p-4 font-mono text-xs text-slate-300 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="monitor-line mt-7 grid gap-2 rounded-2xl border border-glass bg-monitor p-4 font-mono text-xs text-muted sm:grid-cols-2 lg:grid-cols-3">
             {bootLines.map((line, idx) => (
               <motion.p
                 key={line}
@@ -66,7 +66,7 @@ export function Hero() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a className="cta-btn bg-white/10 text-white" href="#projects">
+            <a className="cta-btn bg-chip text-text" href="#projects">
               View Projects
             </a>
             <a className="cta-btn" target="_blank" rel="noreferrer" href={profile.github}>

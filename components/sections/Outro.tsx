@@ -10,12 +10,12 @@ export function Outro() {
             Every great system begins with a conversation.
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
             Whether it&apos;s architecting a platform, deploying intelligence at scale, or securing the next frontier of decentralized systems &mdash; the next chapter starts when you reach out.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a className="cta-btn bg-white/10" href={`mailto:${profile.email}`}>
+            <a className="cta-btn bg-chip" href={`mailto:${profile.email}`}>
               {profile.email}
             </a>
             <a className="cta-btn" target="_blank" rel="noreferrer" href={profile.github}>
@@ -29,7 +29,7 @@ export function Outro() {
             </a>
           </div>
 
-          <p className="mt-8 border-t border-white/10 pt-5 font-mono text-xs text-slate-400">
+          <p className="mt-8 border-t border-glass pt-5 font-mono text-xs text-muted/80">
             Delhi, India · Designed as a narrative-driven system portfolio · Every orbit tells a story
           </p>
         </section>

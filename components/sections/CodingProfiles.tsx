@@ -133,7 +133,7 @@ export function CodingProfiles() {
           <h2 data-parallax className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">
             Where Algorithms Are Forged
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
             Competitive programming isn&apos;t just practice &mdash; it&apos;s the proving ground where problem-solving instincts are sharpened under time pressure and against global competition.
           </p>
         </Reveal>
@@ -175,11 +175,11 @@ export function CodingProfiles() {
                     <p className="font-semibold tracking-tight" style={{ color: p.color }}>
                       {p.name}
                     </p>
-                    <p className="font-mono text-xs text-slate-400">@{p.handle}</p>
+                    <p className="font-mono text-xs text-muted/80">@{p.handle}</p>
                   </div>
                 </div>
 
-                <p className="relative mt-4 text-xs leading-relaxed text-slate-400">
+                <p className="relative mt-4 text-xs leading-relaxed text-muted/80">
                   {p.description}
                 </p>
 
