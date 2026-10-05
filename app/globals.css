@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Silver screen (light) — high-contrast silver projection */
+:root {
+  --noir-bg: #ddd8cf;
+  --noir-wash: #ece8e0;
+  --noir-card: #f7f4ee;
+  --noir-ink: #0a0a0a;
+  --noir-muted: #3d3d3d;
+  --noir-faint: #5c5c5c;
+  --noir-rule: #1a1a1a;
+  --noir-accent: #6b6b78;
+  --noir-bar: #0c0c0c;
+  --noir-bar-text: #e8e4dc;
+  --noir-spotlight: rgba(255, 252, 245, 0.85);
+  --grain-opacity: 0.06;
+  --blinds-opacity: 0;
+}
+
+/* Noir dark — venetian blinds, cigarette-amber highlights */
+.dark {
+  --noir-bg: #030303;
+  --noir-wash: #0a0a0a;
+  --noir-card: #0f0f0f;
+  --noir-ink: #f8f4eb;
+  --noir-muted: #b8b0a4;
+  --noir-faint: #8a8278;
+  --noir-rule: rgba(248, 244, 235, 0.22);
+  --noir-accent: #d4a84b;
+  --noir-bar: #000000;
+  --noir-bar-text: #f0ebe0;
+  --noir-spotlight: rgba(212, 168, 75, 0.12);
+  --grain-opacity: 0.14;
+  --blinds-opacity: 0.07;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-noir-bg text-noir-ink antialiased;
+    background-image: radial-gradient(
+        ellipse 90% 55% at 50% -15%,
+        var(--noir-spotlight),
+        transparent 55%
+      ),
+      linear-gradient(180deg, transparent, rgb(0 0 0 / 0.04));
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 49;
+    opacity: var(--blinds-opacity);
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgb(0 0 0 / 0.45) 3px,
+      rgb(0 0 0 / 0.45) 5px
+    );
+  }
+
+  ::selection {
+    @apply bg-noir-bar text-noir-bar-text;
+  }
+}
+
+@layer components {
+  .section-rule {
+    @apply border-t border-noir-rule;
+  }
+
+  .dossier-card {
+    @apply border border-noir-rule bg-noir-card shadow-dossier;
+  }
+
+  .label-caps {
+    @apply font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-noir-faint;
+  }
+
+  .theme-toggle {
+    @apply inline-flex items-center gap-2 rounded-sm border border-noir-rule bg-noir-card px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-noir-ink transition-colors hover:border-noir-accent hover:text-noir-accent;
+  }
+}
