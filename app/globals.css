@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist: "Inter";
+  --font-geist-mono: "ui-monospace";
+  --background: #080b18;
+  --surface: #0e1326;
+  --surface-raised: #141a34;
+  --border: rgba(147, 162, 211, 0.16);
+  --copy: #f3f5ff;
+  --muted: #9ca7c6;
+  --faint: #6c7695;
+  --indigo: #7f8cff;
+  --violet: #b391ff;
+  --aqua: #69e6dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--copy);
+  font-family: var(--font-geist), sans-serif;
+  margin: 0;
+  min-width: 320px;
+}
+
+::selection {
+  background: rgba(127, 140, 255, 0.35);
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  background:
+    radial-gradient(circle at 82% 10%, rgba(98, 85, 188, 0.14), transparent 25rem),
+    radial-gradient(circle at 3% 48%, rgba(32, 89, 136, 0.09), transparent 24rem),
+    var(--background);
+  overflow: hidden;
+  position: relative;
+}
+
+.site-shell::before {
+  background-image: linear-gradient(rgba(144, 157, 210, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(144, 157, 210, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  pointer-events: none;
+  position: absolute;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+.display-font {
+  letter-spacing: -0.065em;
+}
+
+.eyebrow {
+  align-items: center;
+  color: var(--indigo);
+  display: flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  gap: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  background: var(--indigo);
+  box-shadow: 0 0 12px rgba(127, 140, 255, 0.8);
+  content: "";
+  height: 0.4rem;
+  width: 0.4rem;
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(24, 31, 66, 0.78), rgba(11, 16, 34, 0.82));
+  border: 1px solid var(--border);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+}
+
+.project-card {
+  transition: border-color 220ms ease, transform 220ms ease, background 220ms ease;
+}
+
+.project-card:hover {
+  background: linear-gradient(145deg, rgba(31, 39, 81, 0.9), rgba(12, 18, 39, 0.92));
+  border-color: rgba(127, 140, 255, 0.45);
+  transform: translateY(-4px);
+}
+
+.project-card:hover .project-arrow {
+  color: var(--aqua);
+  transform: translate(3px, -3px);
+}
+
+.project-arrow {
+  color: var(--faint);
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.tag {
+  background: rgba(127, 140, 255, 0.09);
+  border: 1px solid rgba(127, 140, 255, 0.16);
+  color: #b7beff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  padding: 0.34rem 0.55rem;
+}
+
+.line-decoration {
+  background: linear-gradient(90deg, var(--indigo), transparent);
+  height: 1px;
+  opacity: 0.55;
+  width: 100%;
+}
+
+.hero-orb {
+  background: radial-gradient(circle, rgba(127, 140, 255, 0.34), rgba(127, 140, 255, 0) 68%);
+  height: 31rem;
+  pointer-events: none;
+  position: absolute;
+  right: -12rem;
+  top: -13rem;
+  width: 31rem;
+}
+
+.status-dot {
+  animation: pulse 2.4s ease-in-out infinite;
+  background: #66e4c2;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(102, 228, 194, 0.1), 0 0 16px rgba(102, 228, 194, 0.8);
+  height: 0.48rem;
+  width: 0.48rem;
+}
+
+.stat-number {
+  background: linear-gradient(120deg, #f3f5ff 20%, #9ba8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.timeline-line {
+  background: linear-gradient(var(--indigo), rgba(127, 140, 255, 0.08));
+  width: 1px;
+}
+
+.timeline-dot {
+  background: var(--background);
+  border: 2px solid var(--indigo);
+  box-shadow: 0 0 0 5px rgba(127, 140, 255, 0.1);
+  height: 0.7rem;
+  left: -0.28rem;
+  position: absolute;
+  top: 0.35rem;
+  width: 0.7rem;
+}
+
+.social-link {
+  color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.social-link:hover {
+  color: var(--copy);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-shell::before {
+    background-size: 36px 36px;
+  }
+
+  .hero-orb {
+    height: 20rem;
+    right: -12rem;
+    top: -10rem;
+    width: 20rem;
+  }
+}
