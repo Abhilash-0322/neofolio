@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-parchment text-slate-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-slate-panel text-white;
+  }
+}
+
+@layer components {
+  .section-rule {
+    @apply border-t border-slate-rule;
+  }
+
+  .dossier-card {
+    @apply border border-slate-rule bg-white shadow-dossier;
+  }
+
+  .label-caps {
+    @apply text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500;
+  }
+}
