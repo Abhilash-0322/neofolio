@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Champagne light — sunlit dial */
+:root {
+  --bg: #f3ebe0;
+  --surface: #ebe1d2;
+  --panel: #e4d9c8;
+  --text: #1a1612;
+  --muted: #6f6254;
+  --border: #cfc0a8;
+  --accent: #a67c2e;
+  --accent-soft: #c9a962;
+  --shadow-luxe: 0 24px 64px rgba(80, 58, 28, 0.12);
+  --shadow-crown: 0 2px 12px rgba(166, 124, 46, 0.35);
+  --grain: rgba(120, 90, 50, 0.04);
+  --sheen: linear-gradient(
+    135deg,
+    rgba(255, 248, 235, 0.9) 0%,
+    rgba(235, 218, 190, 0.4) 50%,
+    rgba(255, 250, 242, 0.85) 100%
+  );
+}
+
+/* Onyx dark — night case & gilt indices */
+.dark {
+  --bg: #060608;
+  --surface: #0e0e11;
+  --panel: #141418;
+  --text: #f2efe8;
+  --muted: #9a948a;
+  --border: #2a2826;
+  --accent: #d4af37;
+  --accent-soft: #e8c96a;
+  --shadow-luxe: 0 28px 72px rgba(0, 0, 0, 0.55);
+  --shadow-crown: 0 0 20px rgba(212, 175, 55, 0.25);
+  --grain: rgba(255, 255, 255, 0.03);
+  --sheen: linear-gradient(
+    145deg,
+    rgba(30, 30, 34, 0.95) 0%,
+    rgba(8, 8, 10, 0.98) 55%,
+    rgba(22, 22, 26, 0.92) 100%
+  );
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, var(--grain), transparent 55%),
+      var(--sheen);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-gold text-bg;
+  }
+}
+
+@layer components {
+  .luxe-rule {
+    @apply h-px w-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--accent) 50%, transparent),
+      transparent
+    );
+  }
+
+  .luxe-card {
+    @apply border border-border shadow-luxe backdrop-blur-sm;
+    background: color-mix(in srgb, var(--surface) 82%, transparent);
+  }
+
+  .link-luxe {
+    @apply text-ink underline-offset-4 transition-colors hover:text-gold;
+  }
+}
