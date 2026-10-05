@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3e9d6;
+  --surface: #ebe2cf;
+  --panel: #faf6ec;
+  --ink: #2a2118;
+  --muted: #6d5f4f;
+  --accent: #8f1d2b;
+  --brass: #9a7b2f;
+  --rail: #4a4035;
+  --signal: #c41e3a;
+  --shadow-ticket: 4px 4px 0 rgba(42, 33, 24, 0.12);
+  --shadow-lamp: 0 0 0 transparent;
+  --max: 1120px;
+}
+
+.dark {
+  --bg: #0b1018;
+  --surface: #121c28;
+  --panel: #0f1620;
+  --ink: #f0e6d4;
+  --muted: #8b9aab;
+  --accent: #ffb347;
+  --brass: #d4a84b;
+  --rail: #5c6b7a;
+  --signal: #ff4d5a;
+  --shadow-ticket: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-lamp: 0 0 28px rgba(255, 179, 71, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  background-image:
+    linear-gradient(var(--rail) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--rail) 35%, transparent) 1px, transparent 1px);
+  background-size: 100% 2.75rem, 2.75rem 100%;
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 179, 71, 0.08), transparent 55%),
+    linear-gradient(color-mix(in srgb, var(--rail) 25%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--rail) 18%, transparent) 1px, transparent 1px);
+}
+
+a {
+  color: inherit;
+}
+
+.container-shell {
+  width: min(var(--max), calc(100vw - 2rem));
+  margin: 0 auto;
+}
+
+.timetable-card {
+  background: var(--panel);
+  border: 2px solid color-mix(in srgb, var(--rail) 55%, transparent);
+  box-shadow: var(--shadow-ticket);
+}
+
+.dark .timetable-card {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--rail));
+}
+
+.station-rule {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0,
+    var(--accent) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.departure-row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--rail) 45%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+}
+
+.departure-row:last-child {
+  border-bottom: none;
+}
+
+.departure-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.ticket-notch {
+  position: relative;
+}
+
+.ticket-notch::before,
+.ticket-notch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  transform: translateY(-50%);
+}
+
+.ticket-notch::before {
+  left: -7px;
+}
+
+.ticket-notch::after {
+  right: -7px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 1.1rem;
+  border: 2px solid color-mix(in srgb, var(--rail) 70%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lamp);
+}
+
+.cta-btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.dark .cta-btn-primary {
+  color: #1a1208;
+}
+
+.section-spacing {
+  padding: 4.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .departure-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .section-spacing {
+    padding: 3.5rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
