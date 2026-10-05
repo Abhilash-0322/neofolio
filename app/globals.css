@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 232 229 224;
+    --bg-elevated: 244 242 239;
+    --text: 26 26 26;
+    --text-muted: 92 88 82;
+    --border: 184 179 171;
+    --accent: 255 92 26;
+    --accent-2: 26 26 26;
+    --grid-line: 160 155 148;
+    --shadow-sticker: 26 26 26;
+    --glow-1: 255 92 26;
+    --glow-2: 200 255 0;
+    --glow-3: 255 45 146;
+  }
+
+  .dark {
+    --bg: 12 12 15;
+    --bg-elevated: 20 20 26;
+    --text: 245 243 239;
+    --text-muted: 160 154 146;
+    --border: 42 42 52;
+    --accent: 255 45 146;
+    --accent-2: 0 232 255;
+    --grid-line: 50 50 62;
+    --shadow-sticker: 200 255 0;
+    --glow-1: 255 45 146;
+    --glow-2: 0 232 255;
+    --glow-3: 200 255 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[rgb(var(--bg))] text-[rgb(var(--text))] antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  .dark body {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    @apply bg-[rgb(var(--accent))] text-white;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply border border-[rgb(var(--border))] bg-[rgb(var(--bg-elevated))];
+  }
+
+  .sticker-tilt {
+    @apply transition-transform duration-300 hover:-rotate-1 hover:scale-[1.01];
+  }
+
+  .link-tag {
+    @apply font-medium text-[rgb(var(--text))] underline decoration-[rgb(var(--accent))] decoration-2 underline-offset-4 transition-colors hover:text-[rgb(var(--accent))];
+  }
+
+  .label-stencil {
+    @apply font-display text-xs uppercase tracking-[0.25em] text-[rgb(var(--accent))];
+  }
+}
